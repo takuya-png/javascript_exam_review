@@ -6,5 +6,3 @@ let test = [
 let science = { subject: 'science', points: 100 };
 test.push(science);
 console.log(test[3].points);
-
-// aa
