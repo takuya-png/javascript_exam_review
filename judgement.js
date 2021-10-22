@@ -10,4 +10,16 @@ function get_achievement(x,y,z){
     return "D";
   }
 }
-console.log(get_achievement(60,100,40));
+function get_pass_or_failure(x,y,z){
+  if(x>=60 && y>=60 && z>=60){
+      return "合格";
+  } else {
+      return "不合格";
+  }
+}
+function judgement(x,y,z){
+  let achievement = get_achievement(x,y,z);  //関数の戻り値
+  let pass_or_failure =  get_pass_or_failure(x,y,z); 
+  return `あなたの成績は${achievement}です。${pass_or_failure}です！`;
+}
+console.log(judgement(60,100,60));
