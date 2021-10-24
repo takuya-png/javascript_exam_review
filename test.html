@@ -2,40 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DOM操作入門</title>
+    <title>jQuery入門</title>
   </head>
   <body>
-    <form>
-      <input type="text" name="" id="name"/>
-      <input  value="追加" id="btn"/>
-    </form>
-    <h3>TODOリスト</h3>
-    <ul id="lists"></ul>
-    <button type="button" id="deleteButton">削除する</button> 
+    <h1>jQueryを書いてみよう！</h1>
+    <p>jQueryは、世界中でよく使用される、ライブラリのひとつです。</p>
+    <p>jQueryの歴史は古く....</p>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>
-      const lists = document.getElementById('lists');
-      const target = document.getElementById('btn');
-      target.addEventListener('click', function() {
-        const form = document.getElementById('name');
-        const list = document.createElement('li');
-        list.textContent = form.value;
-        list.addEventListener('click', function(e) {
-          const doneList = e.target;
-          doneList.style.textDecoration = 'line-through'; <!-- 追加 -->
-          doneList.style.color = 'gray'; <!-- 追加 -->
-          doneList.style.fontStyle = 'italic';
-        },false);
-        lists.appendChild(list);
-        form.value = "";
-        console.log(list);
-      },false);
-
-      const deleteButton = document.getElementById('deleteButton'); 
-      deleteButton.addEventListener('click', function() { 
-        while (lists.firstChild) { <!-- 変更 -->
-          lists.removeChild(lists.firstChild); <!-- 変更 -->
-        }
-      },false);
+      $(function() {
+        $('p').on('click', function() {
+          $(this).css('color', 'blue');
+        });
+      });
     </script>
   </body>
 </html>
