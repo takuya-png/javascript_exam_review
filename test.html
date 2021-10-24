@@ -19,6 +19,12 @@
         const form = document.getElementById('name');
         const list = document.createElement('li');
         list.textContent = form.value;
+        list.addEventListener('click', function(e) {
+          const doneList = e.target;
+          doneList.style.textDecoration = 'line-through'; <!-- 追加 -->
+          doneList.style.color = 'gray'; <!-- 追加 -->
+          doneList.style.fontStyle = 'italic';
+        },false);
         lists.appendChild(list);
         form.value = "";
         console.log(list);
